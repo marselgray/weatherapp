@@ -4,8 +4,8 @@
 
 body {
   font-family: "Open Sans", serif;
-  background: url("img/bg.jpg") center center no-repeat;
-  background-size: cover;
+  /* background: url("img/bg.jpg") center center no-repeat;
+  background-size: contain; */
 }
 
 .wrapper {
@@ -13,6 +13,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  
 }
 
 .main {
@@ -30,6 +31,8 @@ body {
   justify-content: center;
   text-align: center;
   color: #000;
+  background: url("img/bg.jpg") center center no-repeat;
+  background-size: cover;
 }
 
 .title-container__title {
