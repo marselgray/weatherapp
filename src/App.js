@@ -3,7 +3,6 @@ import Titles from './components/Titles.js';
 import Form from './components/Form.js';
 import Weather from './components/Weather.js';
 
-
 //from https://openweathermap.org/current#name
 const API_KEY = 'cad2d6dddccc9804f43e7c3af9e56f52';
 
@@ -26,7 +25,7 @@ class App extends React.Component {
         const api_call = await fetch(`http://api.openweathermap.org/data/2.5/weather?q=${city},${country}&appid=${API_KEY}&units=metric`);
         const data = await api_call.json();
         // console.log(data);
-        
+
         if(city && country) {
             this.setState({
             temperature: data.main.temp,
@@ -37,23 +36,42 @@ class App extends React.Component {
             error: ''
             });
         } else {
-            alert('you must enter a city and country')
+            this.setState({
+                temperature: undefined,
+                city: undefined,
+                country: undefined,
+                humidity: undefined,
+                description: undefined,
+                error: "Please enter a valid city and country."
+              });
         } 
     }
 
     render(){
         return (
             <div>
-                <Titles />
-                <Form getWeather={this.getWeather}/>
-                <Weather 
-                temperature={this.state.temperature}
-                city={this.state.city}
-                country={this.state.country}
-                humidity={this.state.humidity}
-                description={this.state.description}
-                error={this.state.error}
-                />
+                <div className='wrapper'>
+                    <div className='main'>
+                        <div className='container'>
+                            <div className='row'>
+                                <div className ='col-xs-5 title-container'>
+                                <Titles />
+                                </div>
+                                <div className='col-xs-7 form-container'>
+                                <Form getWeather={this.getWeather}/>
+                                <Weather 
+                                temperature={this.state.temperature}
+                                city={this.state.city}
+                                country={this.state.country}
+                                humidity={this.state.humidity}
+                                description={this.state.description}
+                                error={this.state.error}
+                                />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         );
     }
