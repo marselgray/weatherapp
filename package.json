@@ -2,7 +2,7 @@
   "name": "weatherapp",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://marselgray.github.io/weatherapp/"
+  "homepage": "https://marselgray.github.io/weatherapp/",
   "dependencies": {
     "bootstrap": "^4.1.1",
     "react": "^16.4.1",
