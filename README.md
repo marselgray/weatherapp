@@ -4,4 +4,6 @@ This weather app allows a user to input any city and nation and then render from
 
 Built using React.
 
+*sometimes you may have to unload safe scripts*
+
 ![](images/weather.png)
